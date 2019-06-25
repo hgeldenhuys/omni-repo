@@ -1,0 +1,11 @@
+{
+  "name": "MongoDB",
+  "connector": "mongodb",
+  "url": "mongodb://localhost:27017/omnirepo",
+  "host": "",
+  "port": 0,
+  "user": "",
+  "password": "",
+  "database": "",
+  "useNewUrlParser": true
+}

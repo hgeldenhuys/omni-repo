@@ -1,0 +1,44 @@
+{
+  "name": "Base",
+  "description": "The base document for our business domain",
+  "extending": "Entity",
+  "metadataId": 1000,
+  "properties": [
+    {
+      "name": "id",
+      "type": "number",
+      "id": true,
+      "optional": false,
+      "description": "The Id of the document"
+    },
+    {
+      "name": "createdDate",
+      "type": "number",
+      "id": false,
+      "optional": false,
+      "description": "Created date in Unix time"
+    },
+    {
+      "name": "changedDate",
+      "type": "number",
+      "id": false,
+      "optional": true,
+      "description": "Changed date in Unix time"
+    },
+    {
+      "name": "removed",
+      "type": "boolean",
+      "id": false,
+      "optional": true,
+      "description": "Removed flag. Used for soft deletes",
+      "default": "false"
+    },
+    {
+      "name": "documentation",
+      "type": "string",
+      "id": false,
+      "optional": true,
+      "description": "Documentation"
+    }
+  ]
+}

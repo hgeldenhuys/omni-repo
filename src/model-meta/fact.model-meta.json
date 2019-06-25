@@ -1,0 +1,32 @@
+{
+  "name": "Fact",
+  "description": "Facts are either known or stated. They also give info to the rule on where to find the other causal facts for this fact to be realized",
+  "extending": "Base",
+  "metadataId": 1001,
+  "properties": [
+    {
+      "name": "path",
+      "type": "string",
+      "description": "The path on the JSON where this fact should be recorded",
+      "optional": false,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "rule",
+      "type": "Rule",
+      "description": "The rule that this fact applies to",
+      "optional": false,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "pathMapping",
+      "type": "object",
+      "description": "The paths that the rule needs to translate on the Json BOM",
+      "optional": false,
+      "id": false,
+      "default": {}
+    }
+  ]
+}

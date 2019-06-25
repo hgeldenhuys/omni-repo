@@ -1,0 +1,56 @@
+{
+  "name": "Rule",
+  "description": "A business rule definition",
+  "extending": "Base",
+  "metadataId": 1001,
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Rule name",
+      "optional": true,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The documentation describing this business rule",
+      "optional": false,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "For display purposes",
+      "optional": false,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "sampleValue",
+      "type": "string",
+      "description": "For known facts, supply a sample value that will be included in the generation of a sample JSON BOM",
+      "optional": false,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "statedAs",
+      "type": "string",
+      "description": "A simple JS expression that expresses this rule",
+      "optional": true,
+      "id": false,
+      "default": "undefined"
+    },
+    {
+      "name": "dataType",
+      "type": "string",
+      "description": "Describes the data type. Can be: Unknown, String, Integer, Long, Boolean, Date, Decimal, Enum, List, Object",
+      "optional": false,
+      "id": false,
+      "default": ""
+    }
+  ]
+}

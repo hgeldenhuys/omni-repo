@@ -1,0 +1,40 @@
+{
+  "name": "Situation",
+  "description": "A situation is an aggregate of facts",
+  "extending": "Base",
+  "metadataId": 1001,
+  "properties": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the situation",
+      "optional": true,
+      "id": false,
+      "default": ""
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "description": "The version of this situation for audit reasons",
+      "optional": true,
+      "id": false,
+      "default": "\"0.1\""
+    },
+    {
+      "name": "facts",
+      "type": "Fact",
+      "description": "The collection of facts that belong to this situation",
+      "optional": false,
+      "id": false,
+      "default": "[]"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "The description/documentation of the situation",
+      "optional": true,
+      "id": false,
+      "default": ""
+    }
+  ]
+}
