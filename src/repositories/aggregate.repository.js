@@ -17,7 +17,7 @@ const models_1 = require("../models");
 const datasources_1 = require("../datasources");
 const core_1 = require("@loopback/core");
 const utils_1 = require("../utils/utils");
-let SituationRepository = class SituationRepository extends repository_1.DefaultCrudRepository {
+let AggregateRepository = class SituationRepository extends repository_1.DefaultCrudRepository {
     constructor(dataSource) {
         super(models_1.Situation, dataSource);
     }
@@ -60,9 +60,9 @@ let SituationRepository = class SituationRepository extends repository_1.Default
         return super.find(filter, options);
     }
 };
-SituationRepository = __decorate([
+AggregateRepository = __decorate([
     __param(0, core_1.inject('datasources.MongoDB')),
     __metadata("design:paramtypes", [datasources_1.MongoDbDataSource])
-], SituationRepository);
-exports.SituationRepository = SituationRepository;
+], AggregateRepository);
+exports.SituationRepository = AggregateRepository;
 //# sourceMappingURL=situation.repository.js.map

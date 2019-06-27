@@ -1,3 +1,3 @@
 export * from './rule.repository';
-export * from './situation.repository';
+export * from './aggregate.repository';
 export * from './author-ui.repository';

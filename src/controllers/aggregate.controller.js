@@ -16,7 +16,7 @@ const repository_1 = require("@loopback/repository");
 const rest_1 = require("@loopback/rest");
 const models_1 = require("../models");
 const repositories_1 = require("../repositories");
-let SituationController = class SituationController {
+let AggregateController = class SituationController {
     constructor(situationRepository, ruleRepository) {
         this.situationRepository = situationRepository;
         this.ruleRepository = ruleRepository;
@@ -106,7 +106,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [models_1.Situation]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "create", null);
+], AggregateController.prototype, "create", null);
 __decorate([
     rest_1.get('/situations/count', {
         responses: {
@@ -120,7 +120,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "count", null);
+], AggregateController.prototype, "count", null);
 __decorate([
     rest_1.get('/situations', {
         responses: {
@@ -138,7 +138,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "find", null);
+], AggregateController.prototype, "find", null);
 __decorate([
     rest_1.patch('/situations', {
         responses: {
@@ -153,7 +153,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [models_1.Situation, Object]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "updateAll", null);
+], AggregateController.prototype, "updateAll", null);
 __decorate([
     rest_1.get('/situations/{id}', {
         responses: {
@@ -167,7 +167,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "findById", null);
+], AggregateController.prototype, "findById", null);
 __decorate([
     rest_1.patch('/situations/{id}', {
         responses: {
@@ -181,7 +181,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, models_1.Situation]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "updateById", null);
+], AggregateController.prototype, "updateById", null);
 __decorate([
     rest_1.put('/situations/{id}', {
         responses: {
@@ -195,7 +195,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, models_1.Situation]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "replaceById", null);
+], AggregateController.prototype, "replaceById", null);
 __decorate([
     rest_1.del('/situations/{id}', {
         responses: {
@@ -208,12 +208,12 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], SituationController.prototype, "deleteById", null);
-SituationController = __decorate([
+], AggregateController.prototype, "deleteById", null);
+AggregateController = __decorate([
     __param(0, repository_1.repository(repositories_1.SituationRepository)),
     __param(1, repository_1.repository(repositories_1.RuleRepository)),
     __metadata("design:paramtypes", [repositories_1.SituationRepository,
         repositories_1.RuleRepository])
-], SituationController);
-exports.SituationController = SituationController;
+], AggregateController);
+exports.SituationController = AggregateController;
 //# sourceMappingURL=situation.controller.js.map

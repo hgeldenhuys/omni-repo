@@ -8,29 +8,29 @@ import {
   Options,
   Where
 } from '@loopback/repository';
-import {Rule, Situation} from '../models';
+import {Rule, Aggregate} from '../models';
 import {MongoDbDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 import {createBase, deleteBase, updateBase} from "../utils/utils";
 
-export class SituationRepository extends DefaultCrudRepository<
-  Situation,
-  typeof Situation.prototype.id
+export class AggregateRepository extends DefaultCrudRepository<
+  Aggregate,
+  typeof Aggregate.prototype.id
 > {
   constructor(
     @inject('datasources.MongoDB') dataSource: MongoDbDataSource,
   ) {
-    super(Situation, dataSource);
+    super(Aggregate, dataSource);
   }
-  async create(situation: Situation): Promise<Situation> {
-    createBase(situation, Situation.metadataId);
+  async create(situation: Aggregate): Promise<Aggregate> {
+    createBase(situation, Aggregate.metadataId);
     situation = await super.create(situation);
     console.log('this is after saving ' + Date.now());
     return situation;
   }
   async updateById(
       id: number,
-      situation: DataObject<Situation>,
+      situation: DataObject<Aggregate>,
       options?: Options,
   ): Promise<void> {
     updateBase(situation);
@@ -42,18 +42,18 @@ export class SituationRepository extends DefaultCrudRepository<
     deleteBase(this, id);
     super.deleteById(id, options);
   }
-  async count(where?: Where<Situation>, options?: Options): Promise<Count> {
+  async count(where?: Where<Aggregate>, options?: Options): Promise<Count> {
     if (where === undefined) {
       where = {
         removed: false
       }
     } else {
-      (where as Situation).removed = false;
+      (where as Aggregate).removed = false;
     }
     const result = await ensurePromise(this.modelClass.count(where, options));
     return {count: result};
   }
-  async find(filter?: Filter<Situation>, options?: AnyObject): Promise<(Situation & {})[]> {
+  async find(filter?: Filter<Aggregate>, options?: AnyObject): Promise<(Aggregate & {})[]> {
     if (filter === undefined) {
       filter = {};
     }

@@ -1,6 +1,7 @@
 import {model, property} from "@loopback/repository";
-import {FactInterface} from "../interfaces";
+import {FactInterface} from '../interfaces';
 import {Rule} from ".";
+import {PathMapping} from './path-mapping.model';
 @model({
   name: "Fact",
   description: "Facts are either known or stated. They also give info to the rule on where to find the other causal facts for this fact to be realized"
@@ -23,12 +24,12 @@ export class Fact implements FactInterface {
   })
   rule?: Rule;
   @property({
-    type: 'object',
+    type: 'array',
     description: 'The paths that the rule needs to translate on the Json BOM',
-    itemType: {},
+    itemType: PathMapping,
     required: false,
-    jsonSchema: {nullable: true}
-  })
-  pathMapping?: {};
+    jsonSchema: {nullable: true},
 
+  })
+  pathMapping?: PathMapping[];
 }

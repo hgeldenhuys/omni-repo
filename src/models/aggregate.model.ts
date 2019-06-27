@@ -1,11 +1,11 @@
 import {model, property} from "@loopback/repository";
-import {SituationInterface} from "../interfaces";
+import {AggregateInterface} from "../interfaces";
 import {Base, Fact} from ".";
 @model({
-  name: "Situation",
+  name: "Aggregate",
   description: "A situation is an aggregate of facts"
 })
-export class Situation extends Base implements SituationInterface {
+export class Aggregate extends Base implements AggregateInterface {
 
   static metadataId = 1001;
   @property({
@@ -38,6 +38,6 @@ export class Situation extends Base implements SituationInterface {
   })
   description?: string;
 
-  constructor(data: Partial<Situation>) {
+  constructor(data: Partial<Aggregate>) {
     super(data);
 }}
