@@ -1,4 +1,4 @@
 export interface PathMappingInterface {
-  path: string;
-  input: string;
+  replaceName: string;
+  withPath: string;
 }

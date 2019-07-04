@@ -1,19 +1,19 @@
-import {model, property} from '@loopback/repository';
-import {Base} from '.';
+import {Model, model, property} from '@loopback/repository';
+import {PathMappingInterface} from '../interfaces/pathmapping.interface';
 
 @model({settings: {}})
-export class PathMapping extends Base {
+export class PathMapping extends Model implements PathMappingInterface{
   @property({
     type: 'string',
     required: true,
   })
-  path: string;
+  withPath: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  input: string;
+  replaceName: string;
 
   constructor(data: Partial<PathMapping>) {
     super(data);

@@ -1,6 +1,8 @@
 import {model, property} from "@loopback/repository";
-import {AggregateInterface} from "../interfaces";
+import {AggregateInterface} from '../interfaces';
 import {Base, Fact} from ".";
+import {getJsonSchema} from '@loopback/repository-json-schema';
+
 @model({
   name: "Aggregate",
   description: "A situation is an aggregate of facts"
@@ -41,3 +43,5 @@ export class Aggregate extends Base implements AggregateInterface {
   constructor(data: Partial<Aggregate>) {
     super(data);
 }}
+
+console.log(JSON.stringify(getJsonSchema(Aggregate), undefined, 2));

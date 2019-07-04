@@ -1,9 +1,7 @@
 import {model, property} from "@loopback/repository";
 import {RuleInterface} from "../interfaces";
 import {Base} from ".";
-@model({
-  description: "A business rule definition"
-})
+@model({settings: {}})
 export class Rule extends Base implements RuleInterface {
   static metadataId = 1001;
   @property({
