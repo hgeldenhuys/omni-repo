@@ -8,7 +8,7 @@ import {
   Options,
   Where
 } from '@loopback/repository';
-import {AuthorUi, AuthorUiRelations} from '../models';
+import {AuthorUi} from '../models';
 import {MongoDbDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 import {createBase, deleteBase, updateBase} from "../utils/utils";

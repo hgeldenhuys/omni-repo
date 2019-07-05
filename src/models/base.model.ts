@@ -1,5 +1,5 @@
 import {Entity, model, property} from "@loopback/repository";
-import {BaseInterface} from "../interfaces";
+import {BaseInterface} from '../interfaces';
 @model({
   description: "The base document for our business domain"
 })
@@ -32,6 +32,20 @@ export class Base extends Entity implements BaseInterface {
     description: 'Documentation',
   })
   documentation?: string;
+  @property({
+    type: 'string',
+    description: 'The title of the situation',
+    required: false,
+    jsonSchema: {nullable: true}
+  })
+  title?: string;
+  @property({
+    type: 'string',
+    description: 'The title of the situation',
+    required: false,
+    jsonSchema: {nullable: true}
+  })
+  type?: string;
 
   constructor(data: Partial<Base>) {
     super(data);

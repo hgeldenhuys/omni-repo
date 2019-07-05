@@ -3,7 +3,7 @@ import {
   Count,
   DataObject,
   DefaultCrudRepository,
-  ensurePromise, EntityNotFoundError,
+  ensurePromise,
   Filter,
   Options,
   Where,

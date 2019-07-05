@@ -1,9 +1,8 @@
 import {model, property} from '@loopback/repository';
 import {Base} from '.';
-import {AuthoruiInterface} from "../interfaces/authorui.interface";
 
 @model({settings: {strict: false}})
-export class AuthorUi extends Base implements AuthoruiInterface {
+export class AuthorUi extends Base {
   static metadataId = 1100;
   @property({
     type: 'string',

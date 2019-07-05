@@ -1,5 +1,5 @@
 import {Model, model, property} from '@loopback/repository';
-import {PathMappingInterface} from '../interfaces/pathmapping.interface';
+import {PathMappingInterface} from 'omni.interfaces';
 
 @model({settings: {}})
 export class PathMapping extends Model implements PathMappingInterface{

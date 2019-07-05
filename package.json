@@ -60,7 +60,8 @@
     "@loopback/service-proxy": "^1.2.4",
     "loopback-connector-mongodb": "^4.2.0",
     "oasgraph": "^0.14.3",
-    "oasgraph-cli": "^0.4.3"
+    "oasgraph-cli": "^0.4.3",
+    "omni.interfaces": "^0.0.6"
   },
   "devDependencies": {
     "@loopback/build": "^2.0.2",

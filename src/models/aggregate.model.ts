@@ -1,7 +1,8 @@
 import {model, property} from "@loopback/repository";
-import {AggregateInterface} from '../interfaces';
-import {Base, Fact} from ".";
+import {Base, Fact} from '.';
 import {getJsonSchema} from '@loopback/repository-json-schema';
+import {AggregateInterface} from 'omni.interfaces';
+import {VersionInterface} from 'omni.interfaces/interfaces/version';
 
 @model({
   name: "Aggregate",
@@ -17,21 +18,21 @@ export class Aggregate extends Base implements AggregateInterface {
   })
   name: string;
   @property({
-    type: 'string',
+    type: 'object',
     description: 'The version of this situation for audit reasons',
     default: "0.1",
     required: true
   })
-  version: string;
+  version: VersionInterface;
   @property({
     type: 'array',
     description: 'The collection of facts that belong to this situation',
-    default: [],
+    defaultValue: [],
     itemType: Fact,
     required: false,
     jsonSchema: {nullable: true}
   })
-  facts?: Fact[];
+  facts: Fact[];
   @property({
     type: 'string',
     description: 'The description/documentation of the situation',
@@ -39,6 +40,7 @@ export class Aggregate extends Base implements AggregateInterface {
     jsonSchema: {nullable: true}
   })
   description?: string;
+  type?: "Aggregate" = "Aggregate";
 
   constructor(data: Partial<Aggregate>) {
     super(data);

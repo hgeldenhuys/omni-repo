@@ -1,13 +1,13 @@
 import {model, property} from "@loopback/repository";
-import {FactInterface} from '../interfaces';
 import {Rule} from "./rule.model";
 import {PathMapping} from './path-mapping.model';
 import {getJsonSchema} from '@loopback/repository-json-schema';
+import {FactInterface} from 'omni.interfaces';
+import {DataType} from 'omni.interfaces/types';
 
 const RuleJSON = getJsonSchema(Rule);
 // @ts-ignore
 RuleJSON.nullable = true;
-
 
 
 @model({
@@ -15,7 +15,6 @@ RuleJSON.nullable = true;
   description: "Facts are either known or stated. They also give info to the rule on where to find the other causal facts for this fact to be realized"
 })
 export class Fact implements FactInterface {
-
   @property({
     type: 'string',
     description: 'The path on the JSON where this fact should be recorded',
@@ -30,7 +29,7 @@ export class Fact implements FactInterface {
     jsonSchema: {nullable: true},
     defaultValue: "string"
   })
-  dataType: string;
+  dataType: DataType;
   @property({
     type: 'object',
     description: 'The rule that this fact applies to.',

@@ -1,6 +1,8 @@
 import {model, property} from "@loopback/repository";
-import {RuleInterface} from "../interfaces";
 import {Base} from ".";
+import {RuleInterface} from 'omni.interfaces';
+import {DataType} from 'omni.interfaces/types';
+
 @model({settings: {}})
 export class Rule extends Base implements RuleInterface {
   static metadataId = 1001;
@@ -43,9 +45,10 @@ export class Rule extends Base implements RuleInterface {
     type: 'string',
     description: 'Describes the data type. Can be: Unknown, String, Integer, Long, Boolean, Date, Decimal, Enum, List, Object',
     required: false,
-    jsonSchema: {nullable: true}
+    jsonSchema: {nullable: true},
   })
-  dataType!: string;
+  dataType?: DataType;
+  type?: "Rule" = "Rule";
 
   constructor(data: Partial<Rule>) {
     super(data);
